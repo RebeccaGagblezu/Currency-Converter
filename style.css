@@ -1,0 +1,27 @@
+body{
+    background: #ffffff url("0221313-1.webp") no-repeat fixed;
+    min-height: 100vh;
+    min-width: 100%;
+    background-size: cover;
+}
+
+.mainDiv{
+    background-color: #ffffff;
+    padding: 50px;
+    margin-top: 70px;
+}
+
+.curTitle{
+    color: #0c6977;
+}
+
+.fa-arrows-alt-v{
+    font-size: 50px;
+    color: #0c6977;
+    padding: 10px 0px 20px 0px;
+}
+
+#curResult{
+    background-color: #9c353e;
+    color: #fff;
+}
