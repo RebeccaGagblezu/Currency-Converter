@@ -51,18 +51,30 @@ function getCountries(){
 
 
 function convertCurrency() {
+    debugger;
     const fromCurr = document.getElementById('fromCurrency').value;
     const toCurr = document.getElementById('toCurrency').value;
     const amount = document.getElementById('curAmount').value;
-    let query = ` ${fromCurr}_${toCurr} `;
+    let query = `${fromCurr}_${toCurr}`;
     let myRequest = new Request(
-        'https://www.currencyconverterapi.com/api/v5/convert?q='
+        'https://free.currencyconverterapi.com/api/v5/convert?q='
             + query + '&compact=ultra',
         {
              'method': 'GET',
         });
-        fetch(myRequest).then(response=>{console.log( response.json); })
-        // . then()
+        fetch(myRequest).then(response=>{
+           return response.json(); 
+            
+           
+        }).then(function(myJson) {
+            console.log(myJson); 
+        });
+     
+
+
+    // . then()
+    // fetch(myRequest2).then(res => res.json())
+    // .then(json => console.log(json));
 }
 
 
