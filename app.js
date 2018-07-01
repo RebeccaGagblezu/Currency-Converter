@@ -110,10 +110,10 @@ function convertCurrency() {
      
 
 
-    // . then()
-    // fetch(myRequest).then(res => res.json())
-    // .then(json => 
-    // console.log(json));
-}
+//     // . then()
+//     // fetch(myRequest).then(res => res.json())
+//     // .then(json => 
+//     // console.log(json));
+ }
 
 
