@@ -2,13 +2,22 @@ const fromCurrency = document.getElementById("fromCurrency");
 const toCurrency = document.getElementById("toCurrency")
 
 window.addEventListener('load',e=>{
-    updateCurrency();
+    // updateCurrency();
     getCountries();
 });
 
-function updateCurrency(){
-  //  const res = await fetch('')
+if('serviceWorker' in navigator){
+    try{
+        navigator.serviceWorker.register('sw.js');
+        console.log('Service worker registration successful')
+    } catch(error){
+        console.log('Service worker registration failed')
+    }
 }
+
+// function updateCurrency(){
+//   //  const res = await fetch('')
+// }
 
 
 function getCountries(){
@@ -66,15 +75,45 @@ function convertCurrency() {
            return response.json(); 
             
            
-        }).then(function(myJson) {
-            console.log(myJson); 
+        }).then(myJson => {
+
+    //var resFinal;
+            debugger;
+            // console.log(myJson); 
+            // let _res = myJson.query * amount;
+            let _res = myJson;
+
+            console.log(_res)
+            let res = _res;
+            console.log(res)
+            // curResult.innerHTML = _res;
+            // .map(res => `<option value="${src.id}">${src.currencyName}</option>`)
+            
+            //let _currencyObj = myJson.results;
+       
+        
+        for(_ress in _res){
+          console.log(_ress);
+         
+           let res1= _res[_ress];
+           console.log(res1);
+
+           let resFinal = res1 * amount;
+             document.getElementById('curResult').value = resFinal.toFixed(2);
+            
+        }
+
+       
+
+        
         });
      
 
 
     // . then()
-    // fetch(myRequest2).then(res => res.json())
-    // .then(json => console.log(json));
+    // fetch(myRequest).then(res => res.json())
+    // .then(json => 
+    // console.log(json));
 }
 
 
